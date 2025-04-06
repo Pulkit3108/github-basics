@@ -8,6 +8,75 @@ This README provides an overview of Git along with common commands for merging, 
 
 Git is a distributed version control system that tracks changes in source code during software development. It enables multiple developers to collaborate, maintain a history of changes, and easily revert to previous states when necessary.
 
+## Basic Git Commands
+
+### Git Fetch
+
+**Purpose:**  
+Download objects and refs from a remote repository without integrating them into your working directory.
+
+**Command:**
+```bash
+git fetch [remote-name]
+```
+
+**Example:**
+```bash
+# Fetch all branches from origin
+git fetch origin
+
+# Fetch from all remotes
+git fetch --all
+```
+
+**Note:** Fetching is a safe way to see changes without merging them into your local branches.
+
+### Git Pull
+
+**Purpose:**  
+Fetch and integrate changes from a remote repository into the current branch (essentially a `git fetch` followed by a `git merge`).
+
+**Command:**
+```bash
+git pull [remote-name] [branch-name]
+```
+
+**Example:**
+```bash
+# Pull changes from the origin remote's main branch
+git pull origin main
+```
+
+**Pull All Branches:**
+```bash
+# Update all local branches that track remote branches
+git pull --all
+```
+
+### Git Cherry-Pick
+
+**Purpose:**  
+Apply a specific commit from one branch to another.
+
+**Command:**
+```bash
+git cherry-pick <commit-hash>
+```
+
+**Example:**
+```bash
+# Apply commit abc123 to the current branch
+git cherry-pick abc123
+```
+
+**Multiple Commits:**
+```bash
+# Cherry-pick a range of commits
+git cherry-pick abc123..def456
+```
+
+**Note:** Cherry-picking is useful when you want to apply specific changes without merging entire branches.
+
 ## Git Merge
 
 **Purpose:**  
@@ -62,7 +131,7 @@ If you want to cancel the rebase process and return to your original state:
 git rebase --abort
 ```
 
-**Note:** Rebasing rewrites commit history. Use it on local or private branches to avoid conflicts with collaborators.
+**Note:** Rebasing rewrites commit history. You can use it on local or private branches to avoid conflicts with collaborators.
 
 ## Git Squash
 
