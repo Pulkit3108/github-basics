@@ -11,3 +11,5 @@
 # Start the Testing
 # From m1: T1 T2 T3
 # From m2: T1 T2 T3
+
+# Wait check status
